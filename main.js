@@ -42,7 +42,7 @@ jQuery(function ()
 	}
 
 	function getWeather(query){
-			$.getJSON("fuunctions.php?"+query, function(result){
+			$.getJSON("./functions.php?"+query, function(result){
 			  console.log(result);
 			});
 	}

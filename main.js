@@ -3,7 +3,7 @@ jQuery(function ()
 	 jQuery("#f_elem_city").autocomplete({
 		source: function (request, response) {
 		 jQuery.getJSON(
-			"http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+request.term,
+			"./functions.php?autocomplete=true&q="+request.term,
 			function (data) {
 			 response(data);
 			}
@@ -13,8 +13,8 @@ jQuery(function ()
 		select: function (event, ui) {
 		 var selectedObj = ui.item;
 		 jQuery("#f_elem_city").val(selectedObj.value);
-		 let queryParams ="city="+$("#f_elem_city").val().split(",")[0]+","+$("#f_elem_city").val().split(",")[2].substring(0,1);
-		 getWeather(queryParams);
+         let queryParams ="city="+$("#f_elem_city").val();
+   		 getWeather(queryParams);	
 		 return false;
 		},
 		open: function () {

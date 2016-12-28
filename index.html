@@ -29,14 +29,15 @@
 </head>
 
 <body>
-     <div class="containter-fluid size"> 
+     <div class="containter-fluid size color"> 
 
       	  <div class="row-fluid">
 		    <input placeholder="Search City" class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
 		  </div>
+		   
 		   <div id="weatherInfo" class="row-fluid push-down">
 		   </div>
-
+          
 
 		  <script id="header" type="text/x-handlebars-template">​
 	          <div id="first-column" class="col-md-5">
@@ -84,10 +85,12 @@
 		            <a id="toggle" href="#">{{unit}}</a>
 		          </div>
 	          </script>
-	       
+	       <div class="row-fluid">
+           	<div id="map" class="size" style="height:150px; width: 100%;">
+	        </div>
+           </div> 
     	</div>
-    	<div id="map" class="size" style="height:30%">
-	    </div>
+    	
      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
      crossorigin="anonymous"></script>
  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCRtxPW-qqXIRNts-8X7kGkOC7B9RLMtA"

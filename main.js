@@ -69,11 +69,11 @@ jQuery(function ()
 			      	unit:unit,
 			      	weatherFor:text
 			      }
+			      $('body').css("background-image",mapImg(data.description));
 			      let template = $("#header").html();
 			      let compiledTemplate = Handlebars.compile(template);
 			      $("#weatherInfo").html(compiledTemplate(data));
 			      $("#toggle").click(function(event){
-			         console.log("here");
 			          unit = unit == "imperial" ? "metric": "imperial";
 			          unitValue = unitValue == "C" ? "F" : "C";
 			          getWeather(query);
@@ -99,7 +99,6 @@ jQuery(function ()
       }
      
      function setMap(ll,title){
-     	 
          map = new google.maps.Map(document.getElementById('map'), {
            center: ll,
            zoom: 8
@@ -110,4 +109,31 @@ jQuery(function ()
            title: title
          });
      }
+     function mapImg(description){
+     	switch(description){
+     		case "clear sky": return "url('public/images/clear sky.jpg')";
+     		case "fog":
+     		case "mist": return "url('public/images/mist.jpg')";
+     		case "snow": return "url('public/images/snow.jpg')";
+     		case "broken clouds": return "url('public/images/broken clouds.jpg')";
+     		case "scattered clouds": return "url('public/images/scattered clouds.jpg')";
+     		case "few clouds": return "url('public/images/few clouds.jpg')";
+     		case "rain": return "url('public/images/rain.jpg')";
+     		case "shower rain": return "url('public/images/shower rain.jpg')";
+     		case "thunderstorm": return "url('public/images/thunderstorm.jpg')";
+     		default:
+		     		if(description.indexOf("rain") >0){
+		     	    	return "url('public/images/rain.jpg')";	 
+		     		}else if(description.indexOf("snow") >0){
+	     	    	return "url('public/images/snow.jpg')";	 
+	     		   }
+	     		   else if(description.indexOf("clouds") >0){
+	     	    	return "url('public/images/broken clouds.jpg')";	 
+	     		   }
+	     		   else{
+					  return "url('public/images/initial.jpg')";
+	     		   }
+     		   }		
+     	}
+     
 });

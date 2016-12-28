@@ -22,10 +22,14 @@ body, .position {
 	align-items: flex-start !important;
 }
 body{
-  height: 500px;
+    height: 500px;
+    background-image: url('public/images/initial.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 #map{
   margin-top: 10px;	
+  margin-bottom: 10px;
 }
 
 html, body {
@@ -35,6 +39,16 @@ html, body {
   }
 .size{
 	width: 40%;
+}
+.color {
+    color: #BBD7D9;
+    background-color: #4A817F;
+    filter: alpha(opacity=30);
+    padding: 34px 34px 10px 34px;
+    border-radius: 20px;
+    border-color: orange;
+    border-width: 1px;
+    box-shadow: 5px 5px 19px #29454A;
 }
 @media only screen and (max-width : 990px) {
     #map{

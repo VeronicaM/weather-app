@@ -19,7 +19,6 @@ jQuery(function ()
 		 var selectedObj = ui.item;
 		 jQuery("#f_elem_city").val(selectedObj.value);
          query ="city="+$("#f_elem_city").val();
-         console.log("unitValue ",unitValue);
    		 getWeather(query);	
 		 return false;
 		},

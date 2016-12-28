@@ -52,7 +52,7 @@ jQuery(function ()
 
 	function getWeather(query){
 			$.getJSON("./functions.php?unit="+unit+"&"+query, function(result){
-			    
+			    console.log(result);
 			    let text = result.name+", "+result.sys.country;
 		         if(text.indexOf("none")>0) 
 		           {
@@ -66,7 +66,7 @@ jQuery(function ()
 			      	temp_min:result.main.temp_min,
 			      	temp_max:result.main.temp_max,
 			      	description:result.weather[0].description,
-			      	img:"http://openweathermap.org/img/w/"+result.weather[0].icon+".png",
+			      	imgClass:"wi wi-owm-"+result.weather[0].id,
 			      	unitValue:unitValue,
 			      	unit:unit,
 			      	weatherFor:text

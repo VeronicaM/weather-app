@@ -1,6 +1,6 @@
 jQuery(function () 
  {
- 	let map,
+ 	let map ,
  	    query = "",
  	    unitValue ="C", 
  	    unit = "metric";
@@ -32,7 +32,7 @@ jQuery(function ()
 	 jQuery("#f_elem_city").autocomplete("option", "delay", 100);
 	  $(document).ready(function(){
 		getLocation();
-
+		
 	  });
 	   
     function getLocation() {
@@ -46,12 +46,11 @@ jQuery(function ()
 	function getCoords(result) {
 		 query = "lat="+result.coords.latitude+"&lon="+result.coords.longitude;
 		 getWeather(query);
-		 initMap(result);
 	}
 
 	function getWeather(query){
 			$.getJSON("./functions.php?unit="+unit+"&"+query, function(result){
-			      console.log(result);
+			    
 			      let data = {
 			      	temp: result.main.temp,
 			      	humidity:result.main.humidity,
@@ -79,15 +78,30 @@ jQuery(function ()
 			      		longitude:result.coord.lon
 			      	}
 			      }
-			      initMap(location);
+			      initMap(location,data.weatherFor);
 			});
 	}
 	
  
-      function initMap(location) {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: location.coords.latitude, lng: location.coords.longitude},
-          zoom: 8
-        });
+      function initMap(location,title) {
+      	let ll ={lat: location.coords.latitude, lng: location.coords.longitude};
+         setMap(ll,title);
+         map.addListener('dblclick', function(e) { 
+			   query = "lat="+e.latLng.lat()+"&lon="+e.latLng.lng();
+			   getWeather(query);
+		 }); 
       }
+     
+     function setMap(ll,title){
+     	 
+         map = new google.maps.Map(document.getElementById('map'), {
+           center: ll,
+           zoom: 8
+         });
+         let marker = new google.maps.Marker({
+           position: ll,
+           map: map,
+           title: title
+         });
+     }
 });

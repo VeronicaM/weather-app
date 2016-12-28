@@ -36,52 +36,28 @@
 		    <input placeholder="Search City" class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
 		  </div>
 		   
-		   <div id="weatherInfo" class="row-fluid push-down flex">
+		   <div id="weatherInfo" class="row-fluid flex">
 		   </div>
           
 
 		  <script id="header" type="text/x-handlebars-template">​
-	          <div id="first-column" class="col-sm-4 col-xs-6">
-	       
-	          	<div class="row-fluid position start">
-	          		 <span>	
-		          		<strong> Humidity (%)</strong>
-	          		</span>
-	          		<span>   <i class="wi wi-humidity"></i> {{humidity}}</span>
+	          	<div class="row-fluid">
+	          		 <p class="headline"> {{weatherFor}} </p> 
+		              <hr/>
 	          	</div>
-	          	<div class="row-fluid position start">
-	          		 <span>	
-		          		<strong>Pressure (hPa)</strong>
-	          		</span>
-	          		<span> {{pressure}}</span>
+	          	<div class="row-fluid secondLine">
+	          		<p> <a id="toggle" href="#"> {{temp}} &deg;{{unitValue}}</a></p>
+		            <p class="flex" style="align-items: center">  <i class='{{imgClass}}' style="font-size: 45px;" ></i>  <span style="font-size: 20px;"> {{description}}</span> </p>   
 	          	</div>
-	          </div>
-	          <div id="second-column"  class="col-sm-5 col-xs-6">
-	          	<div class="row-fluid position start">
-	          		 <span>	
-		          		<strong> Min Temperature (&deg;{{unitValue}})</strong>
-	          		</span>
-	          		<span> {{temp_min}}</span>
-	          	</div>
-	          	<div class="row-fluid position start">
-	          		 <span>	
-		          		<strong> Max Temperature (&deg;{{unitValue}})</strong>
-	          		</span>
-	          		<span> {{temp_max}}</span>
-	          	</div>
-	          	<div class="row-fluid position" style="flex-direction: row; justify-content: flex-start;">
-	          		 <span> 
-				  	     {{description}}
-				      </span>
-				     
-	          	</div>
-	          </div>
-		          <div id="third-column"  class="col-sm-3 col-xs-12">
-		            <p> {{weatherFor}} </p> 
-		            <p> <a id="toggle" href="#"> {{temp}} &deg;{{unitValue}}</a></p>
-		           
-		            <p>  <i class='{{imgClass}}' ></i> </p>
-		          </div>
+	          	<div class="row-fluid">
+	          	   <hr/>
+	          	  <div class="lastLine">	
+	          		<span>  <i class="wi wi-thermometer-exterior"> {{temp_min}} &deg;{{unitValue}} <sub>min</sub> </i></span> 
+	          		<span>  <i class="wi wi-thermometer"></i> {{temp_max}} &deg;{{unitValue}} <sub>max</sub></span>
+	          		<span>  <i class="wi wi-humidity"></i> {{humidity}} % </span>
+	          		<span> {{pressure}} hPa</span>
+	          		</div>
+	          	</div>          		          
 	          </script>
 	       <div class="row-fluid">
            	<div id="map" class="size" style="height:150px; width: 100%;">

@@ -39,10 +39,10 @@ jQuery(function ()
 	   
     function getLocation() {
 		if (navigator.geolocation) {
-			 navigator.geolocation.getCurrentPosition(getCoords);
+			 navigator.geolocation.getCurrentPosition(getCoords,showError);
 		
 		} else {
-			return "";
+				 $("#weatherInfo").html("<p>Enable location or Search for your city</p>");
 		  }
 	    }
 	function getCoords(result) {
@@ -52,7 +52,7 @@ jQuery(function ()
 
 	function getWeather(query){
 			$.getJSON("./functions.php?unit="+unit+"&"+query, function(result){
-			   
+			   $('#container').removeClass('height');
 			    let text = result.name+", "+result.sys.country;
 		         if(text.indexOf("none")>0) 
 		           {
@@ -92,7 +92,21 @@ jQuery(function ()
 			});
 	}
 	
- 
+	 function showError(error) {
+	    switch(error.code) {
+	        case error.PERMISSION_DENIED:
+	           
+	        case error.POSITION_UNAVAILABLE:
+	           
+	        case error.TIMEOUT:
+	           
+	        case error.UNKNOWN_ERROR:
+	           $("#weatherInfo").html("<br/><br/><p class='alert alert-warning'>Location not found. Search for city &#x25B2;</p>");
+	           $('#container').addClass('height');
+	    }
+	}
+
+
       function initMap(location,title) {
       	let ll ={lat: location.coords.latitude, lng: location.coords.longitude};
          setMap(ll,title);

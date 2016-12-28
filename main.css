@@ -28,7 +28,6 @@ body{
     background-image: url('public/images/initial.jpg');
 	background-position: 0px 0px;
 	background-repeat: repeat-x;
-
     animation: animatedBackground 40s linear infinite;
 }
 .headline{
@@ -60,6 +59,9 @@ body{
 .size{
 	width: 40%;
 }
+.height{
+	height: 40%;
+}
 #toggle {
     font-size: 60px;
     color: #F2E1C3;
@@ -87,5 +89,8 @@ body{
 @media only screen and (max-width : 990px)  {
   .size{
    	  width: 100%;
+   }
+   .toggle{
+   	 font-size: 45px;
    }
 }

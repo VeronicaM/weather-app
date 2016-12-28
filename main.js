@@ -60,11 +60,11 @@ jQuery(function ()
 		          }
 		          
 			      let data = {
-			      	temp: result.main.temp,
-			      	humidity:result.main.humidity,
-			      	pressure:result.main.pressure,
-			      	temp_min:result.main.temp_min,
-			      	temp_max:result.main.temp_max,
+			      	temp: Math.round(result.main.temp),
+			      	humidity:Math.round(result.main.humidity),
+			      	pressure:Math.round(result.main.pressure),
+			      	temp_min:Math.round(result.main.temp_min),
+			      	temp_max:Math.round(result.main.temp_max),
 			      	description:result.weather[0].description,
 			      	imgClass:"wi wi-owm-"+result.weather[0].id,
 			      	unitValue:unitValue,

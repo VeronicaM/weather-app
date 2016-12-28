@@ -14,13 +14,39 @@ body, .position {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 500px;
 }
-#map {
-    height: 100%;
- }
+.push-down{
+	padding-top: 20px;
+}
+.start{
+	align-items: flex-start !important;
+}
+body{
+  height: 500px;
+}
+#map{
+  margin-top: 10px;	
+}
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
   }
+.size{
+	width: 40%;
+}
+@media only screen and (max-width : 990px) {
+    #map{
+     margin-top:0px;
+   }
+   .push-down{
+   	  padding-top: 0px;
+   }  
+   #weatherInfo{
+   	 font-size: 12px;
+   }
+   .size{
+   	  width: 50%;
+   }
+}

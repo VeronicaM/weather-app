@@ -29,50 +29,68 @@
 </head>
 
 <body>
-     <div class="containter-fluid" style="width: 30%"> 
+     <div class="containter-fluid size"> 
 
       	  <div class="row-fluid">
-		    <input placeholder="Select City" class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
+		    <input placeholder="Search City" class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
 		  </div>
-		  <div id="weatherInfo" class="row-fluid">
-		  </div>
+		   <div id="weatherInfo" class="row-fluid push-down">
+		   </div>
+
+
 		  <script id="header" type="text/x-handlebars-template">​
-	          <div id="first-column" class="col-md-6">
-	          	<div class="row-fluid">
-	          		{{temp}}
+	          <div id="first-column" class="col-md-5">
+	          	<div class="row-fluid position start"> 
+	          	   <span>	
+		          		<strong> Temperature (&deg;{{unitValue}})</strong>
+	          		</span>
+	          		<span> {{temp}} </span>
 	          	</div>
-	          	<div class="row-fluid">
-	          		{{humidity}}
+	          	<div class="row-fluid position start">
+	          		 <span>	
+		          		<strong> Humidity (%)</strong>
+	          		</span>
+	          		<span> {{humidity}}</span>
 	          	</div>
-	          	<div class="row-fluid">
-	          		{{pressure}}
+	          	<div class="row-fluid position start">
+	          		 <span>	
+		          		<strong>Pressure (hPa)</strong>
+	          		</span>
+	          		<span> {{pressure}}</span>
 	          	</div>
 	          </div>
-	          <div id="second-column"  class="col-md-6">
-	          	<div class="row-fluid">
-	          		{{temp_min}}
+	          <div id="second-column"  class="col-md-5">
+	          	<div class="row-fluid position start">
+	          		 <span>	
+		          		<strong> Min Temperature (&deg;{{unitValue}})</strong>
+	          		</span>
+	          		<span> {{temp_min}}</span>
 	          	</div>
-	          	<div class="row-fluid">
-	          		{{temp_max}}
+	          	<div class="row-fluid position start">
+	          		 <span>	
+		          		<strong> Max Temperature (&deg;{{unitValue}})</strong>
+	          		</span>
+	          		<span> {{temp_max}}</span>
 	          	</div>
-	          	<div class="row-fluid" style="display:flex;">
-	          		 <span style="align-self: center"> 
+	          	<div class="row-fluid position" style="flex-direction: row; justify-content: flex-start;">
+	          		 <span> 
 				  	     {{description}}
 				      </span>
 				      <img class="img-responsive" src='{{img}}' />
-		
 	          	</div>
 	          </div>
+		          <div id="third-column"  class="col-md-2">
+		            <p> {{weatherFor}}</p>
+		            <a id="toggle" href="#">{{unit}}</a>
+		          </div>
 	          </script>
 	       
     	</div>
-    	<div id="map" style="width: 30%; height:30%">
-	      
-
+    	<div id="map" class="size" style="height:30%">
 	    </div>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
      crossorigin="anonymous"></script>
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCRtxPW-qqXIRNts-8X7kGkOC7B9RLMtA&callback=initMap"
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCRtxPW-qqXIRNts-8X7kGkOC7B9RLMtA"
   type="text/javascript"></script>
      <script src="public/jquery-ui.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

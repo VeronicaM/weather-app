@@ -93,6 +93,7 @@ jQuery(function ()
       	let ll ={lat: location.coords.latitude, lng: location.coords.longitude};
          setMap(ll,title);
          map.addListener('dblclick', function(e) { 
+         	  $("#f_elem_city").val(e.latLng.lat().toFixed(2)+","+e.latLng.lng().toFixed(2));
 			   query = "lat="+e.latLng.lat()+"&lon="+e.latLng.lng();
 			   getWeather(query);
 		 }); 

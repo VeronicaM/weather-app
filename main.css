@@ -8,6 +8,7 @@
 
 .ff_elem{
 	width: 100%;
+	color: #014776;
 }
 body, .position {
 	display: flex;
@@ -22,7 +23,7 @@ body, .position {
 	align-items: flex-start !important;
 }
 body{
-    height: 500px;
+    height: 670px;
     background-image: url('public/images/initial.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -31,14 +32,23 @@ body{
   margin-top: 10px;	
   margin-bottom: 10px;
 }
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+.flex{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
 .size{
 	width: 40%;
+}
+#toggle {
+	background-color: #2E3B70;
+    border-radius: 10px;
+    padding: 5px;
+    color: #B9E8ED;
+}
+#toggle:hover{
+	text-decoration: none;
+	background-color: #29454A;
 }
 .color {
     color: #BBD7D9;
@@ -50,17 +60,35 @@ html, body {
     border-width: 1px;
     box-shadow: 5px 5px 19px #29454A;
 }
-@media only screen and (max-width : 990px) {
-    #map{
+@media only screen and (max-width : 400px)  {
+ /*   #map{
      margin-top:0px;
    }
    .push-down{
    	  padding-top: 0px;
-   }  
+   }  */
    #weatherInfo{
    	 font-size: 12px;
    }
-   .size{
-   	  width: 50%;
+
+ 
+}
+@media only screen and (max-width : 990px)  {
+   #third-column{
+   	width: 100%;
+   	order: 0;
+   	display: flex;
+   	flex-direction: row;
+   	justify-content: space-between;
+   }
+
+   #first-column{
+   	order: 1;
+   }
+  #second-column{
+   	order: 2;
+   }
+  .size{
+   	  width: 100%;
    }
 }

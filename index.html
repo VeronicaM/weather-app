@@ -35,12 +35,12 @@
 		    <input placeholder="Search City" class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
 		  </div>
 		   
-		   <div id="weatherInfo" class="row-fluid push-down">
+		   <div id="weatherInfo" class="row-fluid push-down flex">
 		   </div>
           
 
 		  <script id="header" type="text/x-handlebars-template">​
-	          <div id="first-column" class="col-md-5">
+	          <div id="first-column" class="col-sm-4 col-xs-6">
 	          	<div class="row-fluid position start"> 
 	          	   <span>	
 		          		<strong> Temperature (&deg;{{unitValue}})</strong>
@@ -60,7 +60,7 @@
 	          		<span> {{pressure}}</span>
 	          	</div>
 	          </div>
-	          <div id="second-column"  class="col-md-5">
+	          <div id="second-column"  class="col-sm-5 col-xs-6">
 	          	<div class="row-fluid position start">
 	          		 <span>	
 		          		<strong> Min Temperature (&deg;{{unitValue}})</strong>
@@ -80,7 +80,7 @@
 				      <img class="img-responsive" src='{{img}}' />
 	          	</div>
 	          </div>
-		          <div id="third-column"  class="col-md-2">
+		          <div id="third-column"  class="col-sm-3 col-xs-12">
 		            <p> {{weatherFor}}</p>
 		            <a id="toggle" href="#">{{unit}}</a>
 		          </div>

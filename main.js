@@ -50,7 +50,7 @@ jQuery(function ()
 
 	function getWeather(query){
 			$.getJSON("./functions.php?unit="+unit+"&"+query, function(result){
-			   
+			    
 			    let text = result.name+", "+result.sys.country;
 		         if(text.indexOf("none")>0) 
 		           {

@@ -32,7 +32,9 @@ jQuery(function ()
 	 jQuery("#f_elem_city").autocomplete("option", "delay", 100);
 	  $(document).ready(function(){
 		getLocation();
-		
+		$("#f_elem_city").click(function(event){
+			          $(this).val("");
+	    });
 	  });
 	   
     function getLocation() {

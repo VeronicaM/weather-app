@@ -35,6 +35,7 @@ jQuery(function ()
 		$("#f_elem_city").click(function(event){
 			          $(this).val("");
 	    });
+	    
 	  });
 	   
     function getLocation() {
@@ -52,7 +53,7 @@ jQuery(function ()
 
 	function getWeather(query){
 			$.getJSON("./functions.php?unit="+unit+"&"+query, function(result){
-			    console.log(result);
+			   
 			    let text = result.name+", "+result.sys.country;
 		         if(text.indexOf("none")>0) 
 		           {
@@ -87,6 +88,8 @@ jQuery(function ()
 			      	}
 			      }
 			      initMap(location,data.weatherFor);
+			      $("#f_elem_city").val(data.weatherFor);
+			  
 			});
 	}
 	
@@ -95,8 +98,7 @@ jQuery(function ()
       	let ll ={lat: location.coords.latitude, lng: location.coords.longitude};
          setMap(ll,title);
          map.addListener('dblclick', function(e) { 
-         	  $("#f_elem_city").val(e.latLng.lat().toFixed(2)+","+e.latLng.lng().toFixed(2));
-			   query = "lat="+e.latLng.lat()+"&lon="+e.latLng.lng();
+         	   query = "lat="+e.latLng.lat()+"&lon="+e.latLng.lng();
 			   getWeather(query);
 		 }); 
       }

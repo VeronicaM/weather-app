@@ -35,7 +35,6 @@ jQuery(function ()
 		$("#f_elem_city").click(function(event){
 			          $(this).val("");
 	    });
-	    
 	  });
 	   
     function getLocation() {

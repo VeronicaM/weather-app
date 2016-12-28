@@ -24,11 +24,12 @@ body, .position {
 	align-items: flex-start !important;
 }
 body{
-    height: 670px;
+    height: 500px;
     background-image: url('public/images/initial.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
 
+    animation: animatedBackground 40s linear infinite;
 }
 .headline{
 	font-size: 25px;
@@ -78,27 +79,12 @@ body{
     border-width: 1px;
     box-shadow: 5px 5px 19px #29454A;
 }
-@media only screen and (max-width : 400px)  {
-   #weatherInfo{
-   	 font-size: 12px;
-   }
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
 }
-@media only screen and (max-width : 990px)  {
-   #third-column{
-   	width: 100%;
-   	order: 0;
-   	display: flex;
-   	flex-direction: row;
-   	justify-content: space-between;
-   	align-items: baseline;
-   }
 
-   #first-column{
-   	order: 1;
-   }
-  #second-column{
-   	order: 2;
-   }
+@media only screen and (max-width : 990px)  {
   .size{
    	  width: 100%;
    }

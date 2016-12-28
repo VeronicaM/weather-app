@@ -1,5 +1,6 @@
 jQuery(function () 
  {
+ 	let map;
 	 jQuery("#f_elem_city").autocomplete({
 		source: function (request, response) {
 		 jQuery.getJSON(
@@ -25,9 +26,11 @@ jQuery(function ()
 		}
 	 });
 	 jQuery("#f_elem_city").autocomplete("option", "delay", 100);
-	  
-	   getLocation();
-	
+	  $(document).ready(function(){
+		getLocation();
+
+	  });
+	   
     function getLocation() {
 		if (navigator.geolocation) {
 			 navigator.geolocation.getCurrentPosition(getCoords);
@@ -39,12 +42,38 @@ jQuery(function ()
 	function getCoords(result) {
 		let positionQuery = "lat="+result.coords.latitude+"&lon="+result.coords.longitude;
 		 getWeather(positionQuery);
+		 initMap(result);
 	}
 
 	function getWeather(query){
 			$.getJSON("./functions.php?"+query, function(result){
-			  console.log(result);
+			      console.log(result);
+			      let data = {
+			      	temp: result.main.temp,
+			      	humidity:result.main.humidity,
+			      	pressure:result.main.pressure,
+			      	temp_min:result.main.temp_min,
+			      	temp_max:result.main.temp_max,
+			      	description:result.weather[0].description,
+			      	img:"http://openweathermap.org/img/w/"+result.weather[0].icon+".png"
+			      }
+			      let template = $("#header").html();
+			      let compiledTemplate = Handlebars.compile(template);
+			      $("#weatherInfo").html(compiledTemplate(data));
+			      let location ={
+			      	coords:{
+			      		latitude:result.coord.lat,
+			      		longitude:result.coord.lon
+			      	}
+			      }
+			      initMap(location);
 			});
 	}
-     
+ 
+      function initMap(location) {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: location.coords.latitude, lng: location.coords.longitude},
+          zoom: 8
+        });
+      }
 });

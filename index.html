@@ -2,11 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <link rel="stylesheet" href="public/jquery-ui.min.css" type="text/css">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="main.css" type="text/css">
+<link rel="stylesheet" href="./main.css" type="text/css">
    <link rel="apple-touch-icon" sizes="57x57" href="./public/images/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="./public/images/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="./public/images/apple-icon-72x72.png">
@@ -24,14 +25,58 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
+	
 </head>
 
 <body>
-    <input class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+     <div class="containter-fluid" style="width: 30%"> 
+
+      	  <div class="row-fluid">
+		    <input placeholder="Select City" class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
+		  </div>
+		  <div id="weatherInfo" class="row-fluid">
+		  </div>
+		  <script id="header" type="text/x-handlebars-template">​
+	          <div id="first-column" class="col-md-6">
+	          	<div class="row-fluid">
+	          		{{temp}}
+	          	</div>
+	          	<div class="row-fluid">
+	          		{{humidity}}
+	          	</div>
+	          	<div class="row-fluid">
+	          		{{pressure}}
+	          	</div>
+	          </div>
+	          <div id="second-column"  class="col-md-6">
+	          	<div class="row-fluid">
+	          		{{temp_min}}
+	          	</div>
+	          	<div class="row-fluid">
+	          		{{temp_max}}
+	          	</div>
+	          	<div class="row-fluid" style="display:flex;">
+	          		 <span style="align-self: center"> 
+				  	     {{description}}
+				      </span>
+				      <img class="img-responsive" src='{{img}}' />
+		
+	          	</div>
+	          </div>
+	          </script>
+	       
+    	</div>
+    	<div id="map" style="width: 30%; height:30%">
+	      
+
+	    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
      crossorigin="anonymous"></script>
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCRtxPW-qqXIRNts-8X7kGkOC7B9RLMtA&callback=initMap"
+  type="text/javascript"></script>
      <script src="public/jquery-ui.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="public/handlebars-v4.0.5.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </body>
 

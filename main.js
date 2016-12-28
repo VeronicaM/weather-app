@@ -50,7 +50,13 @@ jQuery(function ()
 
 	function getWeather(query){
 			$.getJSON("./functions.php?unit="+unit+"&"+query, function(result){
-			    
+			   
+			    let text = result.name+", "+result.sys.country;
+		         if(text.indexOf("none")>0) 
+		           {
+		           	text= text.replace("none","")+ "("+result.coord.lat+", " + result.coord.lon+")";
+		          }
+		          
 			      let data = {
 			      	temp: result.main.temp,
 			      	humidity:result.main.humidity,
@@ -61,7 +67,7 @@ jQuery(function ()
 			      	img:"http://openweathermap.org/img/w/"+result.weather[0].icon+".png",
 			      	unitValue:unitValue,
 			      	unit:unit,
-			      	weatherFor:result.name+", "+result.sys.country
+			      	weatherFor:text
 			      }
 			      let template = $("#header").html();
 			      let compiledTemplate = Handlebars.compile(template);

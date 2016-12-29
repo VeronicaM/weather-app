@@ -39,12 +39,18 @@ jQuery(function ()
 	 
 	   
     function getLocation() {
-		if (navigator.geolocation) {
-			 navigator.geolocation.getCurrentPosition(getCoords,showError);
+		// if (navigator.geolocation) {
+		// 	 navigator.geolocation.getCurrentPosition(getCoords,showError);
 		
-		} else {
+		// } else {
+		// 		 $("#weatherInfo").html("<p>Enable location or Search for your city</p>");
+		//   }
+		  if(geo_position_js.init())
+		  	{ 
+		  		geo_position_js.getCurrentPosition(getCoords,showError); 
+		  	} else{ 
 				 $("#weatherInfo").html("<p>Enable location or Search for your city</p>");
-		  }
+		  	}
 	    }
 	function getCoords(result) {
 		 query = "lat="+result.coords.latitude+"&lon="+result.coords.longitude;

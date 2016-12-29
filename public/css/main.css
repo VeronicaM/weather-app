@@ -94,5 +94,8 @@ body{
    .toggle{
    	 font-size: 45px;
    }
+   body{
+    animation: none;
+   }
 }
 

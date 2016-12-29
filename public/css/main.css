@@ -3,31 +3,32 @@
 	font-weight: normal;
 	margin: -1px;
 	text-align:left;
-	font-size:14px;
+	font-size:30px;
  }
 
 .ff_elem{
 	width: 100%;
 	color: #014776;
+  height: 40px;
+  font-size: 20px;
 }
 body, .position {
 	display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 .push-down{
 	padding-top: 20px;
 }
-.start{
-	align-items: flex-start !important;
+html,body {
+  height: 650px;
 }
 body{
-    height: 500px;
-    background-image: url('public/images/initial.jpg');
-	background-position: 0px 0px;
-	background-repeat: repeat-x;
+    
+    background-image: url('./../images/initial.jpg');
+  	background-position: 0px 0px;
+  	background-repeat: repeat-x;
     animation: animatedBackground 40s linear infinite;
 }
 .headline{
@@ -48,7 +49,7 @@ body{
 	align-items: baseline;
 	font-size: 20px;
 }
-#map{
+#mapPlace{
   margin-top: 10px;	
   margin-bottom: 10px;
 }
@@ -60,7 +61,7 @@ body{
 	width: 40%;
 }
 .height{
-	height: 40%;
+	height: 60%;
 }
 #toggle {
     font-size: 60px;
@@ -94,3 +95,4 @@ body{
    	 font-size: 45px;
    }
 }
+

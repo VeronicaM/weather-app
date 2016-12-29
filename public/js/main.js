@@ -31,11 +31,12 @@ jQuery(function ()
 	 });
 	 jQuery("#f_elem_city").autocomplete("option", "delay", 100);
 	  $(document).ready(function(){
-		getLocation();
-		$("#f_elem_city").click(function(event){
-			          $(this).val("");
-	    });
+			getLocation();
+			$("#f_elem_city").click(function(event){
+				          $(this).val("");
+		    });
 	  });
+	 
 	   
     function getLocation() {
 		if (navigator.geolocation) {
@@ -129,27 +130,27 @@ jQuery(function ()
      }
      function mapImg(description){
      	switch(description){
-     		case "clear sky": return "url('public/images/clear sky.jpg')";
+     		case "clear sky": return "url('./public/images/clear sky.jpg')";
      		case "fog":
-     		case "mist": return "url('public/images/mist.jpg')";
-     		case "snow": return "url('public/images/snow.jpg')";
-     		case "broken clouds": return "url('public/images/broken clouds.jpg')";
-     		case "scattered clouds": return "url('public/images/scattered clouds.jpg')";
-     		case "few clouds": return "url('public/images/few clouds.jpg')";
-     		case "rain": return "url('public/images/rain.jpg')";
-     		case "shower rain": return "url('public/images/shower rain.jpg')";
-     		case "thunderstorm": return "url('public/images/thunderstorm.jpg')";
+     		case "mist": return "url('./public/images/mist.jpg')";
+     		case "snow": return "url('./public/images/snow.jpg')";
+     		case "broken clouds": return "url('./public/images/broken clouds.jpg')";
+     		case "scattered clouds": return "url('./public/images/scattered clouds.jpg')";
+     		case "few clouds": return "url('./public/images/few clouds.jpg')";
+     		case "rain": return "url('./public/images/rain.jpg')";
+     		case "shower rain": return "url('./public/images/shower rain.jpg')";
+     		case "thunderstorm": return "url('./public/images/thunderstorm.jpg')";
      		default:
 		     		if(description.indexOf("rain") >0){
-		     	    	return "url('public/images/rain.jpg')";	 
+		     	    	return "url('./public/images/rain.jpg')";	 
 		     		}else if(description.indexOf("snow") >0){
-	     	    	return "url('public/images/snow.jpg')";	 
+	     	    	return "url('./public/images/snow.jpg')";	 
 	     		   }
 	     		   else if(description.indexOf("clouds") >0){
-	     	    	return "url('public/images/broken clouds.jpg')";	 
+	     	    	return "url('./public/images/broken clouds.jpg')";	 
 	     		   }
 	     		   else{
-					  return "url('public/images/initial.jpg')";
+					  return "url('./public/images/initial.jpg')";
 	     		   }
      		   }		
      	}

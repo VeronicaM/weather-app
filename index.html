@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿	<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -6,8 +6,8 @@
 <meta content="en-us" http-equiv="Content-Language" />
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <link rel="stylesheet" href="public/css/jquery-ui.min.css" type="text/css">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="./main.css" type="text/css">
+<link href="public/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./public/css/main.css" type="text/css">
 <link rel="stylesheet" href="./public/css/weather-icons.min.css" type="text/css">
    <link rel="apple-touch-icon" sizes="57x57" href="./public/images/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="./public/images/apple-icon-60x60.png">
@@ -30,7 +30,7 @@
 </head>
 
 <body class="flex">
-     <div id="container" class="containter-fluid size color"> 
+     <div id="container" class="containter-fluid size color" style="height: 100%;"> 
 
       	  <div class="row-fluid">
 		    <input placeholder="Search City" class="ff_elem" type="text" name="ff_nm_from[]" value="" id="f_elem_city"/>
@@ -38,9 +38,12 @@
 		   
 		   <div id="weatherInfo" class="row-fluid flex">
 		   </div>
-          
-
-		  <script id="header" type="text/x-handlebars-template">​
+	        <div id="rowMap" class="row-fluid" style="height: 40%; width: 100%; margin-top:20px; " >
+	           	<div id="mapPlace" style="height: 100%; width: 100%;"  >
+		        </div>
+           </div> 
+    	</div>
+    	  <script id="header" type="text/x-handlebars-template">​
 	          	<div class="row-fluid">
 	          		 <p class="headline"> {{weatherFor}} </p> 
 		              <hr/>
@@ -59,19 +62,13 @@
 	          		</div>
 	          	</div>          		          
 	          </script>
-	       <div class="row-fluid">
-           	<div id="mapPlace" class="size" style="height:150px; width: 100%;">
-	        </div>
-           </div> 
-    	</div>
-    	
      <script src="public/js/jquery-3.1.1.min.js"></script>
  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCRtxPW-qqXIRNts-8X7kGkOC7B9RLMtA"
   type="text/javascript"></script>
      <script src="public/js/jquery-ui.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="public/js/bootstrap.min.js"></script>
   <script src="public/js/handlebars-v4.0.5.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="public/js/main.js"></script>
 </body>
 
 </html>

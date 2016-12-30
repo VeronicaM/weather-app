@@ -20,4 +20,5 @@ Made using
 - Weather icons  https://github.com/erikflowers/weather-icons 
 - Google Maps API :  https://developers.google.com/maps/documentation/javascript/get-api-key 
 - Heroku for deploying it with a php build setup : https://devcenter.heroku.com/articles/deploying-php 
+- Fav icon generator : http://www.favicon-generator.org/
 
